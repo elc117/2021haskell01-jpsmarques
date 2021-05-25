@@ -47,10 +47,14 @@ onlyBetween60and80 x = filter between60and80 x
 
 --7
 isSpace :: Char -> Bool
-isSpace c = if c == ' ' then True else False
+isSpace c = c == ' ' 
 
---countSpaces :: String -> Int
---countSpaces string =  isSpace string
+returnSpaces :: String -> String
+returnSpaces string = filter isSpace string
+
+countSpaces :: String -> Int
+countSpaces string = length(returnSpaces(string))
+
 
 --8
 circleArea :: Float -> Float
@@ -58,7 +62,6 @@ circleArea r = pi * r^2
 
 calcAreas :: [Float] -> [Float]
 calcAreas x = map circleArea x
-
 
 --9
 charFound :: Char -> String -> Bool
